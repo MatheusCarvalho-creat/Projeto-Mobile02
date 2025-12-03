@@ -1,16 +1,29 @@
-# projeto_mobile
+# Desafio Final - Desenvolvimento Mobile II (Flutter + Firebase Realtime DB)
 
-A new Flutter project.
+## Estrutura
+- lib/models
+- lib/services
+- lib/views
+- main.dart
 
-## Getting Started
+## Dependências
+- http
 
-This project is a starting point for a Flutter application.
+## Configurar Firebase Realtime Database
+1. Crie um projeto no Firebase Console.
+2. No Realtime Database, crie um banco e selecione modo **insecure** (somente para testes) ou configure regras com autenticação.
+3. Copie a URL do Realtime Database (ex.: https://meu-projeto-default-rtdb.firebaseio.com).
+4. Substitua `YOUR_FIREBASE_DB_URL` nos services (`cliente_service.dart` e `produto_service.dart`) pela sua URL (sem `/` extra).
 
-A few resources to get you started if this is your first Flutter project:
+## Executar
+1. `flutter pub get`
+2. `flutter run` (ou execute pelo VSCode/Android Studio)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Observações
+- Rotas:
+  - `/` home
+  - `/cliente` lista clientes
+  - `/cliente/form` formulário cliente
+  - `/produto` lista produtos
+  - `/produto/form` formulário produto
+- O campo `firebaseId` salva a chave do Realtime DB e é usado para PUT/DELETE.
