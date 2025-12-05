@@ -5,6 +5,7 @@ import '../models/produto.dart';
 class ProdutoService {
   final String baseUrl = 'YOUR_FIREBASE_DB_URL';
 
+#GET
   Future<List<Produto>> listarProdutos() async {
     final response = await http.get(Uri.parse('$baseUrl.json'));
     if (response.statusCode == 200) {
@@ -16,6 +17,7 @@ class ProdutoService {
     }
   }
 
+#POST
   Future<void> adicionarProduto(Produto produto) async {
     final response = await http.post(
       Uri.parse('$baseUrl.json'),
@@ -27,6 +29,7 @@ class ProdutoService {
     }
   }
 
+#PUT
   Future<void> atualizarProduto(String firebaseId, Produto produto) async {
     final response = await http.put(
       Uri.parse('$baseUrl/$firebaseId.json'),
@@ -38,6 +41,7 @@ class ProdutoService {
     }
   }
 
+#DELETE
   Future<void> removerProduto(String firebaseId) async {
     final response = await http.delete(
       Uri.parse('$baseUrl/$firebaseId.json'),

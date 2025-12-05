@@ -6,6 +6,7 @@ class ClienteService {
   // substituir pela sua URL do Realtime DB (sem / no final)
   final String baseUrl = 'YOUR_FIREBASE_DB_URL';
 
+#GET
   Future<List<Cliente>> listarClientes() async {
     final response = await http.get(Uri.parse('$baseUrl.json'));
     if (response.statusCode == 200) {
@@ -17,6 +18,7 @@ class ClienteService {
     }
   }
 
+#POST
   Future<void> adicionarCliente(Cliente cliente) async {
     final response = await http.post(
       Uri.parse('$baseUrl.json'),
@@ -28,6 +30,7 @@ class ClienteService {
     }
   }
 
+#PUT
   Future<void> atualizarCliente(String firebaseId, Cliente cliente) async {
     final response = await http.put(
       Uri.parse('$baseUrl/$firebaseId.json'),
@@ -39,6 +42,7 @@ class ClienteService {
     }
   }
 
+#DELETE
   Future<void> removerCliente(String firebaseId) async {
     final response = await http.delete(
       Uri.parse('$baseUrl/$firebaseId.json'),
