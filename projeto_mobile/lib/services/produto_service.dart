@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/produto.dart';
 
 class ProdutoService {
-  final String baseUrl = 'URL';
+  final String baseUrl = 'YOUR_FIREBASE_DB_URL';
 
   Future<List<Produto>> listarProdutos() async {
     final response = await http.get(Uri.parse('$baseUrl.json'));

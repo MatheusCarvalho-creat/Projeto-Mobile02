@@ -4,7 +4,7 @@ import '../models/cliente.dart';
 
 class ClienteService {
   // substituir pela sua URL do Realtime DB (sem / no final)
-  final String baseUrl = 'URL';
+  final String baseUrl = 'YOUR_FIREBASE_DB_URL';
 
   Future<List<Cliente>> listarClientes() async {
     final response = await http.get(Uri.parse('$baseUrl.json'));

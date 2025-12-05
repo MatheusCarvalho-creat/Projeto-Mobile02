@@ -10,11 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
   
-  # Adicione esta linha para integração HTTP/Backend
-  http: ^1.2.1 
+  # Integração HTTP/Backend
+  http: ^1.2.1
 
   cupertino_icons: ^1.0.8
   firebase_core: ^4.2.1
+
+  # 📸 Seleção de fotos (galeria/câmera)
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:
